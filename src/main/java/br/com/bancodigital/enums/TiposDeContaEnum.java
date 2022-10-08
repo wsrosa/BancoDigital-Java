@@ -1,26 +1,23 @@
 package br.com.bancodigital.enums;
 
-import java.io.Serializable;
+public enum TiposDeContaEnum {
+    CONTA_CORRENTE  (1, "Conta-Corrente"),
+    CONTA_POUPANCA  (2, "Conta-Poupança"),
+    CONTA_PAGAMENTO (3, "Conta-Pagamento");
 
-public class EnumTiposDeConta {
-    public enum AccountTypeEnum implements Serializable {
-        CONTA_CORRENTE  (1, "Conta-Corrente"),
-        CONTA_POUPANCA  (2, "Conta-Poupança"),
-        CONTA_PAGAMENTO (3, "Conta-Pagamento");
+    private final int id;
+    private final String descricao;
 
-        private final Integer id;
-        private final String description;
+    TiposDeContaEnum(int id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+    }
 
-        private AccountTypeEnum(Integer id, String description) {
-            this.id = id;
-            this.description = description;
-        }
+    public int getId() {
+        return this.id;
+    }
 
-        public Integer getId() {
-            return this.id;
-        }
-
-        public String getDescription() {
-            return this.description;
-        }
+    public String getDescricao() {
+        return this.descricao;
+    }
 }
